@@ -1,4 +1,6 @@
-package unpunc11;
+package unpunc;
+
+import java.util.LinkedList;
 
 public class consumatore extends Thread{
 	private int pari;
@@ -16,8 +18,7 @@ public class consumatore extends Thread{
 		while(true) {
 			try {
 				val=b.rim();
-				
-				if(val!=-2000) {
+				if(val!=-2000) {  //legge il valore del buffer che se è -2000 significa che non è stato letto alcun valore
 					if(val%2==0) {
 						pari++;
 					}else {
@@ -25,7 +26,6 @@ public class consumatore extends Thread{
 					}
 					System.out.println("il valore è "+val+" siamo a "+pari+" pari e "+dis+" dispari");
 				}
-				sleep(1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
